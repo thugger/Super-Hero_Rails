@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Super Heroes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Real name</th>
+      <th>Hero name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @super_heroes.each do |super_hero| %>
+      <tr>
+        <td><%= super_hero.real_name %></td>
+        <td><%= super_hero.hero_name %></td>
+        <td><%= link_to 'Show', super_hero %></td>
+        <td><%= link_to 'Edit', edit_super_hero_path(super_hero) %></td>
+        <td><%= link_to 'Destroy', super_hero, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Super hero', new_super_hero_path %>
